@@ -1,0 +1,1326 @@
+<html lang="en">
+<!DOCTYPE html>
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>XENORA | Luxury Restaurant</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="Xenora style.css">
+
+</head>
+
+<body>
+
+<!-- PAGE LOADER -->
+<div class="page-loader" id="pageLoader">
+
+    <div class="loader-3d">
+        <div class="loader-ring"></div>
+        <div class="loader-ring"></div>
+        <div class="loader-ring"></div>
+        <div class="loader-plate"></div>
+    </div>
+
+    <div class="loader-mark food-logo food-logo-lg">
+        <span class="fl-x">X</span><span class="fl-e">E</span><span class="fl-n">N</span><span class="fl-o">O</span><span class="fl-r">R</span><span class="fl-a">A</span>
+    </div>
+
+</div>
+
+
+<header>
+
+    <nav class="navbar">
+
+        <div class="logo food-logo">
+            <span class="fl-x">X</span><span class="fl-e">E</span><span class="fl-n">N</span><span class="fl-o">O</span><span class="fl-r">R</span><span class="fl-a">A</span>
+        </div>
+
+        <ul class="nav-links" id="nav-links">
+
+            <li><a href="#home">Home</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#orders">My Orders</a></li>
+
+        </ul>
+
+        <div class="nav-actions">
+
+            <button class="theme-btn">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+
+            <button class="cart-btn" id="cartBtn">
+    <i class="fa-solid fa-cart-shopping"></i>
+    <span id="cartCount">0</span>
+</button>
+
+            <button class="account-btn" id="accountBtn">
+                <i class="fa-solid fa-user"></i>
+                <span id="accountLabel">Login</span>
+            </button>
+
+            <button class="book-btn">
+                Reserve
+            </button>
+
+        </div>
+
+        <div class="menu-toggle" id="menu-toggle">
+            ☰
+        </div>
+
+    </nav>
+
+</header>
+
+<!-- ==========================
+     AUTH MODAL (Login / Signup)
+========================== -->
+
+<div class="auth-modal" id="authModal">
+
+    <div class="auth-modal-box">
+
+        <button class="auth-close" id="authClose">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <div class="auth-tabs">
+            <button class="auth-tab active" id="tabLogin">Login</button>
+            <button class="auth-tab" id="tabSignup">Sign Up</button>
+        </div>
+
+        <!-- LOGIN FORM -->
+        <form class="auth-form" id="loginForm">
+
+            <p class="auth-error" id="loginError"></p>
+
+            <label>Email</label>
+            <input type="email" id="loginEmail" required placeholder="you@example.com">
+
+            <label>Password</label>
+            <input type="password" id="loginPassword" required placeholder="••••••••">
+
+            <button type="submit" class="primary-btn auth-submit">
+                Login
+            </button>
+
+        </form>
+
+        <!-- SIGNUP FORM -->
+        <form class="auth-form" id="signupForm" style="display:none;">
+
+            <p class="auth-error" id="signupError"></p>
+
+            <label>Full Name</label>
+            <input type="text" id="signupName" required placeholder="Your name">
+
+            <label>Email</label>
+            <input type="email" id="signupEmail" required placeholder="you@example.com">
+
+            <label>Phone (optional)</label>
+            <input type="tel" id="signupPhone" placeholder="10-digit number">
+
+            <label>Password</label>
+            <input type="password" id="signupPassword" required minlength="6" placeholder="At least 6 characters">
+
+            <button type="submit" class="primary-btn auth-submit">
+                Create Account
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+<section class="hero reveal" id="home">
+
+    <div class="hero-content">
+
+        <h1>
+            Experience Luxury Dining
+        </h1>
+
+        <p>
+            Where premium taste meets unforgettable moments.
+        </p>
+
+        <div class="hero-buttons">
+
+            <button class="primary-btn">
+                Explore Menu
+            </button>
+
+            <button class="secondary-btn">
+                Book Table
+            </button>
+
+        </div>
+
+    </div>
+
+    <div class="hero-image">
+
+        <img
+            src="https://images.unsplash.com/photo-1544025162-d76694265947?w=1200"
+            alt="Luxury Food">
+
+    </div>
+
+</section>
+
+<!-- MENU -->
+
+<section class="menu-preview reveal" id="menu">
+
+    <h2>Our Signature Menu</h2>
+
+    <p>
+        Discover our most loved premium dishes.
+    </p>
+
+  <!-- MENU CONTROLS -->
+
+<div class="menu-controls">
+
+    <div class="menu-categories">
+
+        <button class="category-btn active" data-category="all">
+            All
+        </button>
+
+        <button class="category-btn" data-category="pizza">
+            🍕 Pizza
+        </button>
+
+        <button class="category-btn" data-category="burger">
+            🍔 Burger
+        </button>
+
+        <button class="category-btn" data-category="pasta">
+            🍝 Pasta
+        </button>
+
+        <button class="category-btn" data-category="drink">
+            🥤 Drinks
+        </button>
+
+        <button class="category-btn" data-category="dessert">
+            🍰 Desserts
+        </button>
+
+      <button class="category-btn" data-category="chicken">
+    🍗 Chicken
+        </button>
+
+    </div>
+
+    <div class="menu-search">
+
+        <i class="fa-solid fa-magnifying-glass"></i>
+
+        <input
+            type="text"
+            id="menuSearch"
+            placeholder="Search your favourite food..."
+        >
+
+    </div>
+
+</div>
+
+  <!--menu control end -->
+
+    <div class="menu-grid">
+
+    <!-- ITALIAN PIZZA -->
+
+    <div class="food-card"
+      data-category="pizza">
+
+        <div class="food-badge">
+            Chef's Special
+        </div>
+
+        <img
+            src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=800"
+            alt="Italian Pizza">
+
+        <div class="food-info">
+
+            <h3>Italian Pizza</h3>
+
+            <div class="food-rating">
+                ★★★★★
+            </div>
+
+            <span class="food-price">
+                ₹499
+            </span>
+
+            <button class="add-cart-btn">
+                Add to Cart
+            </button>
+
+          <button class="order-now-btn">
+    Order Now
+</button>
+
+        </div>
+
+    </div>
+
+
+    <!-- CLASSIC BURGER -->
+
+    <div class="food-card"
+      data-category="burger">
+
+        <div class="food-badge">
+            Bestseller
+        </div>
+
+        <img
+            src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800"
+            alt="Classic Burger">
+
+        <div class="food-info">
+
+            <h3>Classic Burger</h3>
+
+            <div class="food-rating">
+                ★★★★★
+            </div>
+
+            <span class="food-price">
+                ₹349
+            </span>
+
+            <button class="add-cart-btn">
+                Add to Cart
+            </button>
+
+          <button class="order-now-btn">
+    Order Now
+</button>
+
+        </div>
+
+    </div>
+
+
+    <!-- CREAMY PASTA -->
+
+    <div class="food-card"
+      data-category="pasta">
+
+        <div class="food-badge">
+            Popular
+        </div>
+
+        <img
+            src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?w=800"
+            alt="Creamy Pasta">
+
+        <div class="food-info">
+
+            <h3>Creamy Pasta</h3>
+
+            <div class="food-rating">
+                ★★★★★
+            </div>
+
+            <span class="food-price">
+                ₹399
+            </span>
+
+            <button class="add-cart-btn">
+                Add to Cart
+            </button>
+
+          <button class="order-now-btn">
+    Order Now
+</button>
+
+        </div>
+
+    </div>
+
+      <!-- GRILLED CHICKEN -->
+
+<div class="food-card" data-category="chicken">
+
+    <div class="food-badge">
+        Chef's Choice
+    </div>
+
+    <img
+        src="https://images.unsplash.com/photo-1532550907401-a500c9a57435?w=800"
+        alt="Grilled Chicken">
+
+    <div class="food-info">
+
+        <h3>Grilled Chicken</h3>
+
+        <div class="food-rating">
+            ★★★★★
+        </div>
+
+        <span class="food-price">
+            ₹549
+        </span>
+
+        <button class="add-cart-btn">
+            Add to Cart
+        </button>
+
+      <button class="order-now-btn">
+    Order Now
+</button>
+
+    </div>
+
+</div>
+
+
+<!-- CHOCOLATE DESSERT -->
+
+<div class="food-card" data-category="dessert">
+
+    <div class="food-badge">
+        Sweet Special
+    </div>
+
+    <img
+        src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=800"
+        alt="Chocolate Cake">
+
+    <div class="food-info">
+
+        <h3>Chocolate Cake</h3>
+
+        <div class="food-rating">
+            ★★★★★
+        </div>
+
+        <span class="food-price">
+            ₹299
+        </span>
+
+        <button class="add-cart-btn">
+            Add to Cart
+        </button>
+      <button class="order-now-btn">
+    Order Now
+</button>
+      
+
+    </div>
+
+</div>
+
+
+<!-- CHEESECAKE -->
+
+<div class="food-card" data-category="dessert">
+
+    <div class="food-badge">
+        Premium
+    </div>
+
+    <img
+        src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=800"
+        alt="Cheesecake">
+
+    <div class="food-info">
+
+        <h3>Classic Cheesecake</h3>
+
+        <div class="food-rating">
+            ★★★★★
+        </div>
+
+        <span class="food-price">
+            ₹329
+        </span>
+
+        <button class="add-cart-btn">
+            Add to Cart
+        </button>
+
+      <button class="order-now-btn">
+    Order Now
+</button>
+
+    </div>
+
+</div>
+
+
+<!-- FRESH JUICE -->
+
+<div class="food-card" data-category="drink">
+
+    <div class="food-badge">
+        Fresh
+    </div>
+
+    <img
+        src="https://images.unsplash.com/photo-1546173159-315724a31696?w=800"
+        alt="Fresh Juice">
+
+    <div class="food-info">
+
+        <h3>Fresh Fruit Juice</h3>
+
+        <div class="food-rating">
+            ★★★★★
+        </div>
+
+        <span class="food-price">
+            ₹199
+        </span>
+
+        <button class="add-cart-btn">
+            Add to Cart
+        </button>
+
+      <button class="order-now-btn">
+    Order Now
+</button>
+
+    </div>
+
+</div>
+
+
+<!-- COLD COFFEE -->
+
+<div class="food-card" data-category="drink">
+
+    <div class="food-badge">
+        Bestseller
+    </div>
+
+    <img
+        src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=800"
+        alt="Cold Coffee">
+
+    <div class="food-info">
+
+        <h3>Cold Coffee</h3>
+
+        <div class="food-rating">
+            ★★★★★
+        </div>
+
+        <span class="food-price">
+            ₹229
+        </span>
+
+        <button class="add-cart-btn">
+            Add to Cart
+        </button>
+
+      <button class="order-now-btn">
+    Order Now
+</button>
+
+    </div>
+
+</div>
+
+
+<!-- CHICKEN STEAK -->
+
+<div class="food-card" data-category="chicken">
+
+    <div class="food-badge">
+        Signature
+    </div>
+
+    <img
+        src="https://images.unsplash.com/photo-1600891964092-4316c288032e?w=800"
+        alt="Chicken Steak">
+
+    <div class="food-info">
+
+        <h3>Chicken Steak</h3>
+
+        <div class="food-rating">
+            ★★★★★
+        </div>
+
+        <span class="food-price">
+            ₹649
+        </span>
+
+        <button class="add-cart-btn">
+            Add to Cart
+        </button>
+
+      <button class="order-now-btn">
+    Order Now
+</button>
+
+    </div>
+
+</div>
+
+      
+
+</div>
+
+</section>
+
+
+  <!-- ==============================
+     FOOD DETAILS MODAL
+================================ -->
+
+<div class="food-modal" id="foodModal">
+
+    <div class="food-modal-box">
+
+        <button class="modal-close" id="modalClose">
+            &times;
+        </button>
+
+        <img
+            id="modalImage"
+            src=""
+            alt="Food">
+
+        <div class="modal-content">
+
+            <span class="modal-label">
+                XENORA SIGNATURE
+            </span>
+
+            <h2 id="modalTitle">
+                Italian Pizza
+            </h2>
+
+            <div class="modal-rating">
+                ★★★★★
+                <span>5.0</span>
+            </div>
+
+            <p id="modalDescription">
+                A delicious premium dish prepared
+                with fresh ingredients and crafted
+                by our expert chefs.
+            </p>
+
+            <div class="modal-details">
+
+                <div>
+                    <strong>Ingredients</strong>
+                    <span id="modalIngredients">
+                        Fresh vegetables, cheese,
+                        herbs & premium sauce
+                    </span>
+                </div>
+
+                <div>
+                    <strong>Price</strong>
+                    <span id="modalPrice">
+                        ₹499
+                    </span>
+                </div>
+
+            </div>
+
+            <button class="modal-order-btn" id="modalOrder">
+                Add to Cart
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+  
+<!-- ABOUT -->
+
+<section class="features reveal" id="about">
+
+    <h2>Why Choose Xenora?</h2>
+
+    <p>
+        Luxury, taste and unforgettable experiences in every visit.
+    </p>
+
+    <div class="feature-grid">
+
+        <div class="feature-card">
+
+            <i class="fa-solid fa-utensils"></i>
+
+            <h3>Premium Food</h3>
+
+            <p>
+                Every dish is prepared using fresh ingredients and crafted by expert chefs.
+            </p>
+
+        </div>
+
+        <div class="feature-card">
+
+            <i class="fa-solid fa-champagne-glasses"></i>
+
+            <h3>Luxury Ambience</h3>
+
+            <p>
+                Enjoy an elegant atmosphere designed for unforgettable dining moments.
+            </p>
+
+        </div>
+
+        <div class="feature-card">
+
+            <i class="fa-solid fa-truck-fast"></i>
+
+            <h3>Fast Delivery</h3>
+
+            <p>
+                Fresh meals delivered quickly with premium packaging and care.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+  
+
+<!-- REVIEWS -->
+
+<section class="reviews reveal">
+
+    <h2>What Our Customers Say</h2>
+
+    <p>
+        Trusted by thousands of happy customers around the world.
+    </p>
+
+    <div class="review-grid">
+
+        <div class="review-card">
+
+            <img
+                src="https://i.pravatar.cc/150?img=12"
+                alt="James Wilson">
+
+            <h3>James Wilson</h3>
+
+            <div class="stars">★★★★★</div>
+
+            <p>
+                Outstanding food, beautiful ambience and exceptional service. Highly recommended!
+            </p>
+
+        </div>
+
+        <div class="review-card">
+
+            <img
+                src="https://i.pravatar.cc/150?img=32"
+                alt="Sophia Carter">
+
+            <h3>Sophia Carter</h3>
+
+            <div class="stars">★★★★★</div>
+
+            <p>
+                Every dish was delicious. Xenora offers a truly premium dining experience.
+            </p>
+
+        </div>
+
+        <div class="review-card">
+
+            <img
+                src="https://i.pravatar.cc/150?img=45"
+                alt="Daniel Brown">
+
+            <h3>Daniel Brown</h3>
+
+            <div class="stars">★★★★★</div>
+
+            <p>
+                The atmosphere was luxurious and the staff were incredibly friendly. I'll definitely come back.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- GALLERY -->
+
+<section class="gallery reveal" id="gallery">
+
+    <h2>Our Gallery</h2>
+
+    <p>
+        A glimpse of the luxury experience at Xenora.
+    </p>
+
+    <div class="gallery-grid">
+
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800"
+                 alt="Luxury Restaurant">
+        </div>
+
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=800"
+                 alt="Premium Food">
+        </div>
+
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?w=800"
+                 alt="Dining Experience">
+        </div>
+
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=800"
+                 alt="Dessert">
+        </div>
+
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?w=800"
+                 alt="Chef">
+        </div>
+
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800"
+                 alt="Fine Dining">
+        </div>
+
+    </div>
+
+</section>
+
+  <!-- ==========================
+     MY ORDERS
+========================== -->
+
+<section class="orders-section reveal" id="orders">
+
+    <h2>My Orders</h2>
+
+    <p>
+        View your XENORA order history.
+    </p>
+
+    <div class="orders-container" id="ordersContainer">
+
+        <!-- Orders will appear here -->
+
+    </div>
+
+    <div class="no-orders" id="noOrders">
+
+        <i class="fa-solid fa-receipt"></i>
+
+        <h3>No Orders Yet</h3>
+
+        <p>
+            Your placed orders will appear here.
+        </p>
+
+        <button
+            class="primary-btn"
+            onclick="document.getElementById('menu').scrollIntoView({behavior:'smooth'})">
+
+            Explore Menu
+
+        </button>
+
+    </div>
+
+    <h2 class="reservations-heading">My Reservations</h2>
+
+    <div class="reservations-container" id="reservationsContainer">
+        <!-- Reservations will appear here -->
+    </div>
+
+    <div class="no-reservations" id="noReservations">
+
+        <i class="fa-solid fa-calendar-check"></i>
+
+        <h3>No Reservations Yet</h3>
+
+        <p>
+            Your table reservations will appear here.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section class="contact reveal" id="contact">
+
+    <h2>Reserve Your Table</h2>
+
+    <p>
+        Book your unforgettable dining experience today.
+    </p>
+
+    <div class="contact-container">
+
+        <form class="contact-form" 
+          id="reservationForm">
+
+            <input
+                type="text"
+                placeholder="Full Name"
+                required>
+
+            <input
+                type="email"
+                placeholder="Email Address"
+                required>
+
+            <input
+                type="tel"
+                placeholder="Phone Number"
+                required>
+
+            <div class="form-row">
+
+                <input
+                    type="date"
+                    required>
+
+                <input
+                    type="time"
+                    required>
+
+            </div>
+
+            <select required>
+
+                <option value="">Number of Guests</option>
+                <option>1 Person</option>
+                <option>2 People</option>
+                <option>3 People</option>
+                <option>4 People</option>
+                <option>5+ People</option>
+
+            </select>
+
+            <textarea
+                rows="5"
+                placeholder="Special Request (Optional)">
+            </textarea>
+
+            <button
+                type="submit"
+                class="primary-btn">
+                Reserve Table
+            </button>
+
+        </form>
+
+        <div class="contact-info">
+
+            <h3>Visit Xenora</h3>
+
+            <p>📍 Luxury Street, Downtown City</p>
+
+            <p>📞 +91 98765 43210</p>
+
+            <p>📧 contact@xenora.com</p>
+
+            <p>🕒 Open: 10:00 AM – 11:00 PM</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+    <div class="footer-content">
+
+        <div class="footer-logo">
+
+            <h2 class="food-logo food-logo-md">
+                <span class="fl-x">X</span><span class="fl-e">E</span><span class="fl-n">N</span><span class="fl-o">O</span><span class="fl-r">R</span><span class="fl-a">A</span>
+            </h2>
+
+            <p>
+                Experience luxury dining with premium food,
+                elegant ambience and unforgettable moments.
+            </p>
+
+        </div>
+
+        <div class="footer-links">
+
+            <h3>Quick Links</h3>
+
+            <ul>
+
+                <li><a href="#home">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+
+            </ul>
+
+        </div>
+
+        <div class="footer-social">
+
+            <h3>Follow Us</h3>
+
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 XENORA. All Rights Reserved.
+        </p>
+
+    </div>
+
+</footer>
+
+
+<!-- ==========================
+     QUICK ORDER MODAL
+========================== -->
+
+<div class="order-modal" id="orderModal">
+
+    <div class="order-box">
+
+        <button class="order-close" id="orderClose">
+            &times;
+        </button>
+
+        <span class="order-label">
+            XENORA QUICK ORDER
+        </span>
+
+        <h2 id="orderFoodName">
+            Italian Pizza
+        </h2>
+
+        <p id="orderFoodPrice">
+            ₹499
+        </p>
+
+        <div class="order-group">
+
+            <label for="orderQuantity">
+                Quantity
+            </label>
+
+            <select id="orderQuantity">
+
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+
+            </select>
+
+        </div>
+
+        <div class="order-group">
+
+            <label for="customerName">
+                Your Name
+            </label>
+
+            <input
+                type="text"
+                id="customerName"
+                placeholder="Enter your name"
+            >
+
+        </div>
+
+        <div class="order-group">
+
+            <label for="customerPhone">
+                Phone Number
+            </label>
+
+            <input
+                type="tel"
+                id="customerPhone"
+                placeholder="Enter phone number"
+            >
+
+        </div>
+
+        <button
+            class="confirm-order-btn"
+            id="confirmOrder">
+
+            Confirm Order
+
+        </button>
+
+        <div
+            class="order-success"
+            id="orderSuccess">
+
+            ✓ Order request received!
+
+        </div>
+
+    </div>
+
+</div>
+
+  <!-- CART MODAL -->
+
+<div class="cart-modal" id="cartModal">
+
+    <div class="cart-box">
+
+        <button class="cart-close" id="cartClose">
+            &times;
+        </button>
+
+        <h2>Your Cart</h2>
+
+        <div class="cart-items" id="cartItems">
+            <!-- Cart items will appear here -->
+        </div>
+
+        <div class="cart-empty" id="cartEmpty">
+            Your cart is empty.
+        </div>
+
+        <div class="cart-footer">
+
+            <div class="cart-total">
+                <span>Total</span>
+                <strong id="cartTotal">₹0</strong>
+            </div>
+
+            <button class="checkout-btn" id="checkoutBtn">
+                Proceed to Checkout
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+  <!-- ==========================
+     CHECKOUT MODAL
+========================== -->
+
+<div class="checkout-modal" id="checkoutModal">
+
+    <div class="checkout-box">
+
+        <button class="checkout-close" id="checkoutClose">
+            &times;
+        </button>
+
+        <span class="checkout-label">
+            XENORA CHECKOUT
+        </span>
+
+        <h2>Complete Your Order</h2>
+
+        <!-- CUSTOMER DETAILS -->
+
+        <div class="checkout-section">
+
+            <h3>Customer Details</h3>
+
+            <input
+                type="text"
+                id="checkoutName"
+                placeholder="Full Name"
+                required
+            >
+
+            <input
+                type="tel"
+                id="checkoutPhone"
+                placeholder="Phone Number"
+                required
+            >
+
+            <textarea
+                id="checkoutAddress"
+                rows="3"
+                placeholder="Delivery Address"
+                required
+            ></textarea>
+
+        </div>
+
+
+        <!-- ORDER SUMMARY -->
+
+        <div class="checkout-section">
+
+            <h3>Order Summary</h3>
+
+            <div id="checkoutItems">
+                <!-- Items generated by JavaScript -->
+            </div>
+
+        </div>
+
+
+        <!-- PRICE -->
+
+        <div class="checkout-price">
+
+            <div>
+                <span>Subtotal</span>
+                <strong id="checkoutSubtotal">₹0</strong>
+            </div>
+
+            <div>
+                <span>Delivery</span>
+                <strong id="checkoutDelivery">₹49</strong>
+            </div>
+
+            <div class="checkout-grand-total">
+                <span>Total</span>
+                <strong id="checkoutTotal">₹0</strong>
+            </div>
+
+        </div>
+
+
+        <button
+            class="place-order-btn"
+            id="placeOrderBtn">
+
+            Place Order
+
+        </button>
+
+
+        <!-- SUCCESS -->
+
+        <div
+            class="checkout-success"
+            id="checkoutSuccess">
+
+          </div>
+
+<!-- ORDER STATUS -->
+
+<div class="order-status" id="orderStatus">
+
+    <div class="status-step active">
+        <span>✓</span>
+        <p>Confirmed</p>
+    </div>
+
+    <div class="status-line"></div>
+
+    <div class="status-step">
+        <span>🍳</span>
+        <p>Preparing</p>
+    </div>
+
+    <div class="status-line"></div>
+
+    <div class="status-step">
+        <span>🚴</span>
+        <p>Out for Delivery</p>
+    </div>
+
+    <div class="status-line"></div>
+
+    <div class="status-step">
+        <span>✓</span>
+        <p>Delivered</p>
+    </div>
+
+</div>
+
+            <div class="success-icon">
+                ✓
+            </div>
+
+            <h3>Order Confirmed!</h3>
+
+            <p>
+                Thank you for choosing XENORA.
+            </p>
+
+            <p>
+                Order ID:
+                <strong id="orderId"></strong>
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+  <!-- JavaScript -->
+<script src="Xenora script.js"></script>
+
+</body>
+</html>
+  
+
+
+
+
+
+
+
+
+      
+  
